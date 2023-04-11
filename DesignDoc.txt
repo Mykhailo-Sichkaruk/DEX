@@ -1,0 +1,40 @@
+// =================== FIIT DEX Project =================== // 
+//                      Design Document                      //
+// ========================================================= //  
+
+# TODO: Odstrániť tento riadok a napísať mená autorov do dokumentácie
+
+1. Vysvetlite, prečo pridávanie a odoberanie likvidity na vašej burze nezmení výmenný kurz.
+
+
+# TODO: napíšte odpoveď na otázku 1
+
+
+2. K bonusu - Vysvetlite svoju schému odmeňovania poskytovateľov likvidity a zdôvodnite rozhodnutia o dizajne, ktoré ste urobili. Ako spĺňa požiadavky na odmeny za likviditu uvedené v sekcii 7?
+
+
+# TODO: napíšte odpoveď na otázku 2
+
+
+3. Popíšte aspoň jednu metódu, ktorú ste použili na minimalizáciu spotreby gas pri kontrakte burzy. Prečo bola táto metóda efektívna?
+
+
+# TODO: napísať odpoveď na otázku 3
+
+
+4. Voliteľná spätná väzba:
+4a. Koľko času ste strávili na zadaní?
+
+# TODO: odpovedať na otázku 4(a)
+
+4b. Aká je jedna vec, ktorá by bola užitočná, keby ste ju vedeli predtým ako ste začali pracovať na zadaní 2?
+
+# TODO: odpovdať na otázku 4(b)
+
+4c. Keby ste mohli zmeniť jednu vec v tomto zadaní, čo by to bolo?
+
+# TODO: odpovedať na otázku 4(c)
+
+4d. Prosím pridajte nám akýkoľvek feedback alebo spätnú väzbu, ktorý máte na mysli alebo na srdci 😊.
+
+# TODO: odpovedať na otázku 4(d)

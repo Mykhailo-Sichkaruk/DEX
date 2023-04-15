@@ -9,7 +9,7 @@ import "hardhat/console.sol";
 contract TokenExchange is Ownable {
     string public exchange_name = '';
 
-    address tokenAddr;                                  // TODO: paste token contract address here
+    address tokenAddr = 0x5FbDB2315678afecb367f032d93F642f64180aa3;            // TODO: paste token contract address here
     Token public token = Token(tokenAddr);                                
 
     // Liquidity pool for the exchange
@@ -35,11 +35,7 @@ contract TokenExchange is Ownable {
     // ETH will be sent to pool in this transaction as msg.value
     // amountTokens specifies the amount of tokens to transfer from the liquidity provider.
     // Sets up the initial exchange rate for the pool by setting amount of token and amount of ETH.
-    function createPool(uint amountTokens)
-        external
-        payable
-        onlyOwner
-    {
+    function createPool(uint amountTokens) external payable onlyOwner {
         // This function is already implemented for you; no changes needed.
 
         // require pool does not yet exist:
@@ -79,10 +75,7 @@ contract TokenExchange is Ownable {
 
     // Function addLiquidity: Adds liquidity given a supply of ETH (sent to the contract as msg.value).
     // You can change the inputs, or the scope of your function, as needed.
-    function addLiquidity(uint max_exchange_rate, uint min_exchange_rate) 
-        external 
-        payable
-    {
+    function addLiquidity(uint max_exchange_rate, uint min_exchange_rate) external payable {
         /******* TODO: Implement this function *******/
        
     }

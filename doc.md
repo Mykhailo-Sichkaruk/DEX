@@ -55,3 +55,7 @@ Napríklad ste získali 10 SHARES z celkového počtu 100 - potom je váš SHARE
  - Naucili sme sa pisat smart kontrakty v Solidity. Dozvedeli sme sa, ako funguje distribovana burza a ako funguje výmena tokenov z fee. Co je impermanent loss a ako zarabat na burze.
 
  - Nase resenie splna zakladne podmienky a pridali sme funkcionalitu vo forme fee a schému odmeňovania poskytovateľov likvidity.
+
+### Zmeneno:
+
+- Obnovili sme index.html (pridane: eth / token balance), exchange.js (bola pridana podpora funkcii zo html na zobrazenie balance)

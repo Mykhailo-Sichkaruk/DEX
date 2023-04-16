@@ -2,6 +2,7 @@
 ###  	      @authors: Mykhailo Sichkaruk // Vadym Tilihuzov     
 ## =============================================
 
+## Otazky
 1. Vysvetlite, prečo pridávanie a odoberanie likvidity na vašej burze nezmení výmenný kurz.
 
 
@@ -49,3 +50,8 @@ Napríklad ste získali 10 SHARES z celkového počtu 100 - potom je váš SHARE
 
 
 4d. Prosím pridajte nám akýkoľvek feedback alebo spätnú väzbu, ktorý máte na mysli alebo na srdci 😊.
+
+## Zaver
+ - Naucili sme sa pisat smart kontrakty v Solidity. Dozvedeli sme sa, ako funguje distribovana burza a ako funguje výmena tokenov z fee. Co je impermanent loss a ako zarabat na burze.
+
+ - Nase resenie splna zakladne podmienky a pridali sme funkcionalitu vo forme fee a schému odmeňovania poskytovateľov likvidity.

@@ -912,15 +912,11 @@ const sanityCheck = async function() {
 
         await removeAllLiquidity(1);
         expected_tokens_removed = (90 +  22 * 100 * swap_fee) * state5.token_eth_rate;
-        console.log("expected tokens removed: ", expected_tokens_removed);
         var state6 = await getPoolState();
         var user_tokens6 = await token_contract.connect(provider.getSigner(defaultAccount)).balanceOf(defaultAccount);
-        // debug the line           Math.abs(state6.eth_liquidity - (state5.eth_liquidity - 90)) < 5 && 
-      console.log("state6.eth_liquidity:", state6.eth_liquidity);
-      console.log("state5.eth_liquidity:", state5.eth_liquidity);
         score += check("Test removing all liquidity", swap_fee[0], 
           Math.abs(state6.eth_liquidity - (state5.eth_liquidity - 90)) < 5 && 
-          // Math.abs(state6.token_liquidity - (state5.token_liquidity - expected_tokens_removed)) < expected_tokens_removed * 1.2 &&
+          Math.abs(state6.token_liquidity - (state5.token_liquidity - expected_tokens_removed)) < expected_tokens_removed * 1.2 &&
           Number(user_tokens6) > Number(user_tokens5)); 
     }
     console.log("Final score: " + score + "/50");

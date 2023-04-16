@@ -157,8 +157,6 @@ contract TokenExchange is Ownable {
         lps[msg.sender] -= shares_to_remove;
         total_shares -= shares_to_remove;
         k = token.balanceOf(address(this)) * address(this).balance;
-        console.log("token balance", token.balanceOf(address(this)));
-        console.log("eth balance", address(this).balance);  
     }
 
     // Function removeAllLiquidity: Removes all liquidity that msg.sender is entitled to withdraw
@@ -169,7 +167,6 @@ contract TokenExchange is Ownable {
     ) public payable {
         uint eth_shares_rate = (rate_denominator * address(this).balance) / total_shares;
         uint tokens_rate = (rate_denominator * token.balanceOf(address(this))) / address(this).balance;
-        console.log("tokens_rate", tokens_rate);
         require(
             tokens_rate <= max_exchange_rate,
             "Exchange rate is larger than max exchange rate"
@@ -179,17 +176,10 @@ contract TokenExchange is Ownable {
             "Exchange rate is smaller than min exchange rate"
         );
         require(lps[msg.sender] > 0, "You don't have any liquidity");
-        console.log("min_exchange_rate", min_exchange_rate);
-        console.log("max_exchange_rate", max_exchange_rate);
         uint amountETH = ((lps[msg.sender] * eth_shares_rate * precision) / rate_denominator) / precision;
-        console.log("Current shares balance", lps[msg.sender]);
-        console.log("total_shares", total_shares);
         require(amountETH > 0, "ETH value should be larger than 0");
         // Amount of tokens client we return
         uint tokens_to_return = (amountETH * tokens_rate) / rate_denominator;
-        console.log("tokens_to_return", tokens_to_return);
-        console.log("amountETH", amountETH);
-        console.log("shares_rate", eth_shares_rate);
         // Find shares for client
         // Transfer tokens to client
         bool is_transfer_successfull = token.transfer(
@@ -199,8 +189,6 @@ contract TokenExchange is Ownable {
         require(is_transfer_successfull, "Cound not transfer tokens to client");
 
         payable(msg.sender).transfer(amountETH); 
-        console.log("token balance", token.balanceOf(address(this)));
-        console.log("eth balance", address(this).balance);  
         // Remove shares from client
         // lps[msg.sender] -= shares_to_remove;
         total_shares -= lps[msg.sender];
@@ -252,14 +240,11 @@ contract TokenExchange is Ownable {
         );
         // Find fee
         uint real_eth = (msg.value * (swap_fee_denominator - swap_fee_numerator)) / swap_fee_denominator;
-        console.log("real_eth", real_eth);
         // Update eth pool
         uint eth_reserves_without_fee = address(this).balance - msg.value + real_eth;
-        console.log("eth_reserves_without_fee", eth_reserves_without_fee);
         uint new_token_reserves = (precision * k) / eth_reserves_without_fee;
-        console.log("new_token_reserves", new_token_reserves);
         uint token_to_swap = ((token.balanceOf(address(this)) * precision) - new_token_reserves) / precision;
-        console.log("token_to_swap", token_to_swap);
+        
 
         // Transfer tokens to client
         bool is_transfer_successfull = token.transfer(
